@@ -1,0 +1,13 @@
+{
+  "name": "cervantes-asistencia",
+  "version": "1.0.0",
+  "description": "Toma de asistencia automática: presenciales (QR rotativo + IP) y virtuales (extensión Teams/cámara)",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "node api/server.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "qrcode": "^1.5.4"
+  }
+}

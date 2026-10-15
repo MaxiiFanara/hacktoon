@@ -1,0 +1,28 @@
+:root { --bg:#f5f6fa; --card:#fff; --fg:#1d2433; --muted:#6b7385; --brand:#1f4fd8; --ok:#16803c; --bad:#c62828; --line:#e1e4ec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#12151d; --card:#1b2030; --fg:#e8ebf3; --muted:#9aa3b8; --brand:#6d92ff; --ok:#4ade80; --bad:#ff7b7b; --line:#2b3248; } }
+* { box-sizing: border-box; }
+body { margin:0; font-family:system-ui,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--fg); }
+main { max-width:960px; margin:0 auto; padding:20px 16px 60px; }
+h1 { font-size:1.5rem; margin:0 0 4px; } h2 { font-size:1.1rem; margin:0 0 12px; }
+.muted { color:var(--muted); font-size:.9rem; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-top:16px; }
+label { display:block; font-size:.85rem; color:var(--muted); margin:10px 0 4px; }
+input { width:100%; padding:10px 12px; font-size:1rem; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--fg); }
+button { padding:10px 16px; font-size:1rem; border:0; border-radius:8px; background:var(--brand); color:#fff; cursor:pointer; margin-top:12px; }
+button.sec { background:transparent; color:var(--brand); border:1px solid var(--brand); }
+button.danger { background:var(--bad); }
+.row { display:flex; gap:12px; flex-wrap:wrap; } .row > * { flex:1; min-width:140px; }
+.btns { display:flex; gap:8px; flex-wrap:wrap; }
+.msg { margin-top:12px; padding:10px 12px; border-radius:8px; font-weight:500; }
+.msg.ok { background:rgba(22,128,60,.15); color:var(--ok); } .msg.err { background:rgba(198,40,40,.15); color:var(--bad); }
+.hidden { display:none !important; }
+table { width:100%; border-collapse:collapse; font-size:.92rem; } th,td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); }
+.ok { color:var(--ok); } .bad { color:var(--bad); }
+.codigo { font-size:2rem; font-weight:700; letter-spacing:.2em; }
+.qrbox { text-align:center; } .qrbox img { width:min(100%,380px); background:#fff; padding:8px; border-radius:12px; }
+.bar { height:6px; background:var(--line); border-radius:3px; overflow:hidden; margin-top:8px; } .bar i { display:block; height:100%; background:var(--brand); transition:width .3s linear; }
+/* modo proyector: solo QR gigante */
+body.proyector main > :not(#panelQr) { display:none; }
+body.proyector #panelQr { margin:0; border:0; background:transparent; }
+body.proyector .qrbox img { width:min(90vw,85vh); }
+body.proyector #panelQr > :not(.qrbox):not(#btnProyector) { display:none; }

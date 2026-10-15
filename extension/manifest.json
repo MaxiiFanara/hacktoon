@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Cervantes Camera Tracker",
+  "version": "1.0.0",
+  "description": "Registra el estado (encendida/apagada) de la cámara en Teams Web para la asistencia. No graba ni guarda imágenes.",
+  "permissions": ["storage"],
+  "host_permissions": ["http://localhost:3000/*", "https://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Cervantes Camera Tracker" },
+  "content_scripts": [
+    { "matches": ["https://teams.microsoft.com/*", "https://teams.live.com/*", "https://*.teams.microsoft.com/*"], "js": ["inject.js"], "run_at": "document_start", "world": "MAIN", "all_frames": true },
+    { "matches": ["https://teams.microsoft.com/*", "https://teams.live.com/*", "https://*.teams.microsoft.com/*"], "js": ["content.js"], "run_at": "document_idle" }
+  ]
+}

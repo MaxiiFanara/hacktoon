@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel docente - Asistencia Cervantes</title><link rel="stylesheet" href="styles.css"></head>
+<body><main>
+  <h1>Panel docente</h1>
+
+  <section class="card" id="panelLogin">
+    <h2>Ingreso</h2>
+    <label for="clave">Clave de docente</label><input id="clave" type="password" autocomplete="current-password">
+    <button id="btnLogin">Entrar</button>
+    <div id="msgLogin"></div>
+  </section>
+
+  <section class="card hidden" id="panelNueva">
+    <h2>Nueva clase</h2>
+    <div class="row">
+      <div><label for="nombre">Nombre</label><input id="nombre" value="Clase"></div>
+      <div><label for="duracion">Duración (min)</label><input id="duracion" type="number" value="60" min="5"></div>
+      <div><label for="umbral">% mínimo de cámara (virtuales)</label><input id="umbral" type="number" value="75" min="1" max="100"></div>
+    </div>
+    <button id="btnCrear">Iniciar clase</button>
+    <div id="msgNueva"></div>
+  </section>
+
+  <section class="card hidden" id="panelQr">
+    <div class="muted">Código de clase para alumnos virtuales</div>
+    <div class="codigo" id="codigo"></div>
+    <div id="avisoIp" class="msg err hidden">Validación de red desactivada (modo desarrollo).</div>
+    <div class="qrbox"><img id="qrImg" alt="QR de asistencia"><div class="bar"><i id="qrBar"></i></div>
+      <div class="muted">El QR cambia cada <span id="step"></span> s</div></div>
+    <div class="btns"><button id="btnProyector" class="sec">Modo proyector</button><button id="btnCerrar" class="danger">Cerrar clase</button><button id="btnCsv" class="sec">Descargar CSV</button></div>
+  </section>
+
+  <section class="card hidden" id="panelLista">
+    <h2>Presenciales (<span id="nPres">0</span>)</h2>
+    <table><thead><tr><th>Nombre</th><th>DNI</th><th>Hora</th></tr></thead><tbody id="tPres"></tbody></table>
+    <h2 style="margin-top:20px">Virtuales (<span id="nVirt">0</span>)</h2>
+    <table><thead><tr><th>Nombre</th><th>DNI</th><th>Cámara</th><th>%</th><th>Estado</th></tr></thead><tbody id="tVirt"></tbody></table>
+  </section>
+</main>
+<script src="docente.js"></script></body></html>

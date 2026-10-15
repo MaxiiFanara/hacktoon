@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><style>
+body{font-family:system-ui,sans-serif;width:290px;padding:12px;margin:0}
+h1{font-size:15px;margin:0 0 8px} label{display:block;font-size:12px;color:#555;margin:8px 0 2px}
+input{width:100%;box-sizing:border-box;padding:6px;font-size:14px} button{margin-top:10px;width:100%;padding:8px;background:#1f4fd8;color:#fff;border:0;border-radius:6px;font-size:14px;cursor:pointer}
+#estado{margin-top:10px;font-size:12px;color:#333}
+</style></head><body>
+<h1>Cervantes Camera Tracker</h1>
+<label>Servidor</label><input id="servidor" placeholder="http://localhost:3000">
+<label>Código de clase</label><input id="codigo" placeholder="ABC12" style="text-transform:uppercase">
+<label>Nombre y apellido</label><input id="nombre">
+<label>DNI</label><input id="dni" inputmode="numeric">
+<button id="guardar">Guardar</button>
+<div id="estado"></div>
+<script src="popup.js"></script></body></html>
